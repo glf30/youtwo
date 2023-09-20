@@ -16,7 +16,7 @@ export const videoRouter = createTRPCRouter({
   getRandomVideos: publicProcedure
     .input(z.number())
     .query(async ({ ctx, input }) => {
-      const videosWithUser = await ctx.prisma.video.findMany({
+      const videosWithUser = await ctx.db.video.findMany({
         where: {
           publish: true,
         },
@@ -30,7 +30,7 @@ export const videoRouter = createTRPCRouter({
 
       const videosWithCounts = await Promise.all(
         videos.map(async (video) => {
-          const views = await ctx.prisma.videoEngagement.count({
+          const views = await ctx.db.videoEngagement.count({
             where: {
               videoId: video.id,
               engagementType: EngagementType.VIEW,

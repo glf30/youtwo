@@ -86,7 +86,7 @@ function generateNextId(start: number, end: number) {
     }
 }
 
-const cloudinaryName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || "";
+const cloudinaryName = process.env.NEXT_PUBLIC_CLOUDINARY_NAME || "";
 const getNextVideoId = generateNextId(1, 35);
 const getNextUserId = generateNextId(164, 178)
 
