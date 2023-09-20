@@ -90,7 +90,7 @@ export default function Navbar({ children }: NavbarProps) {
     {
         icon: (className) => <MessagePlusSquare className={className} />,
         name: "Feedback",
-        path: `mailto:vidchill@vidchill.com`,
+        path: `mailto:youtwo@youtwo.com`,
         lineAbove: false,
       },
       {
