@@ -25,12 +25,12 @@ export { default as Search } from "./Search";
 export { default as Menu } from "./Menu";
 export { RedTrash } from "./RedTrash";
 export {
-  GreenPlay,
-  GreenHorn,
-  GreenPeople,
-  GreenEye,
-  GreenHeart,
-  GreenUserCheck,
-} from "./GreenIcons";
+  VioletPlay,
+  VioletHorn,
+  VioletPeople,
+  VioletEye,
+  VioletHeart,
+  VioletUserCheck,
+} from "./VioletIcons";
 
 export { default as Close } from "./Close";
