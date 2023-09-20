@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProfileDefault from "../../public/assets/profile.jpg"
+import ProfileDefault from "../../public/assets/profile.jpg";
 import Link from "next/link";
 import { Thumbnail } from "./Components";
 import moment from "moment";
@@ -54,6 +54,37 @@ export const MultiColumnVideo: React.FC<VideoComponentProps> = ({
   </div>
 );
 
+export const SingleColumnVideo: React.FC<VideoComponentProps> = ({
+  videos,
+  users,
+}) => (
+  <div>
+    {videos.map((video, index) => {
+      const user = users[index];
+      if (!user) {
+        return null;
+      }
+      return (
+        <Link href={`/video/${video.id}`} key={video.id}>
+          <div className="my-5 flex flex-col gap-4 hover:bg-gray-100 lg:flex-row">
+            <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:w-64 lg:shrink-0">
+              <Thumbnail thumbnailUrl={video.thumbnailUrl} />
+            </div>
+            <div>
+              <VideoTitle title={video.title} />
+              <VideoInfo views={video.views} createdAt={video.createdAt} />
+
+              <div className="relative mt-2 flex flex-row items-center gap-x-4">
+                <UserImage image={user.image || ""} />
+                <UserName name={user.name || ""} />
+              </div>
+            </div>
+          </div>
+        </Link>
+      );
+    })}
+  </div>
+);
 
 export function VideoTitle({
   title,
@@ -102,29 +133,28 @@ export function VideoInfo({
 }
 
 export function UserImage({
-    image,
-    className = "",
-  }: {
-    image: string;
-    className?: string;
-  }) {
-    return (
-      <div className={`relative h-10 w-10 ${className}`}>
-        <Image
-          src={image || ProfileDefault}
-          alt=""
-          className="absolute rounded-full"
-          fill
-        />
-      </div>
-    );
-  }
+  image,
+  className = "",
+}: {
+  image: string;
+  className?: string;
+}) {
+  return (
+    <div className={`relative h-10 w-10 ${className}`}>
+      <Image
+        src={image || ProfileDefault}
+        alt=""
+        className="absolute rounded-full"
+        fill
+      />
+    </div>
+  );
+}
 
-  export function UserName({ name }: { name: string }) {
-    return (
-      <p className="max-h-6 overflow-hidden text-sm font-semibold leading-6 text-gray-900">
-        {name}
-      </p>
-    );
-  }
-  
+export function UserName({ name }: { name: string }) {
+  return (
+    <p className="max-h-6 overflow-hidden text-sm font-semibold leading-6 text-gray-900">
+      {name}
+    </p>
+  );
+}
