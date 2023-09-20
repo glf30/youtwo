@@ -70,10 +70,10 @@ export const authOptions: NextAuthOptions = {
      */
   ],
   theme: {
-    colorScheme: "auto", // "auto" | "dark" | "light"
-    brandColor: "", // Hex color code
-    logo: "", // Absolute URL to image
-    buttonText: "" // Hex color code
+    colorScheme: "light", // "auto" | "dark" | "light"
+    brandColor: "#7e22ce", // Hex color code
+    logo: "/assets/YouTwoText.png", // Absolute URL to image
+    buttonText: "#FFFFFF" // Hex color code
   }
 };
 
