@@ -71,7 +71,7 @@ export const authOptions: NextAuthOptions = {
   ],
   theme: {
     colorScheme: "light", // "auto" | "dark" | "light"
-    brandColor: "#7e22ce", // Hex color code
+    brandColor: "#c4b5fd", // Hex color code
     logo: "/assets/YouTwoText.png", // Absolute URL to image
     buttonText: "#FFFFFF" // Hex color code
   }
