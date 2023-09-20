@@ -347,7 +347,7 @@ export default function Sidebar({
                       </li>
 
                       {sessionData ? (
-                        <div className="my-2 flex flex-row bg-blue-300">
+                        <div className="my-2 flex flex-row">
                           <UserImage image={sessionData?.user.image || ""} />
                           <div className="ml-2 flex w-full flex-col  justify-start truncate text-sm ">
                             <p className="font-semibold text-gray-700">
