@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search, DotsVertical } from "./Icons/Icons";
+import { Search, DotsVertical, HelpCircle, User, Brush, MessagePlusSquare, Settings, File, Lock, LogOut } from "./Icons/Icons";
 import YouTwoLogo from "../../public/assets/YouTwoLogo.png";
 import Image from "next/image";
 import {
@@ -9,7 +9,7 @@ import {
   Fragment,
 } from "react";
 import router from "next/router";
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { Menu, Transition } from "@headlessui/react";
 import { UserImage } from "./Components";
 import { Button } from "./Buttons/Buttons";
@@ -27,6 +27,87 @@ interface NavigationItem {
 
 export default function Navbar({ children }: NavbarProps) {
   const { data: sessionData } = useSession();
+  const userId = sessionData?.user.id;
+
+  const signedInNavigation: NavigationItem[] = [
+    {
+      icon: (className) => <User className={className} />,
+      name: "View Profile",
+      path: `/${String(userId)}/ProfileVideos}`,
+      lineAbove: true,
+    },
+    {
+        icon: (className) => <Brush className={className} />,
+        name: "Creator Studio",
+        path: "/Dashboard",
+        lineAbove: false,
+      },
+      {
+        icon: (className) => <HelpCircle className={className} />,
+        name: "Help",
+        path: "/Blog/Help",
+        lineAbove: true,
+      },
+      {
+        icon: (className) => <Settings className={className} />,
+        name: "Settings",
+        path: "/Settings",
+        lineAbove: false,
+      },
+      {
+        icon: (className) => <MessagePlusSquare className={className} />,
+        name: "Feedback",
+        path: "#",
+        lineAbove: false,
+      },
+      {
+        icon: (className) => <File className={className} />,
+        name: "Terms of Service",
+        path: "/Blog/TOS",
+        lineAbove: true,
+      },
+      {
+        icon: (className) => <Lock className={className} />,
+        name: "Privacy",
+        path: "/Blog/Privacy",
+        lineAbove: false,
+      },
+      {
+        icon: (className) => <LogOut className={className} />,
+        name: "Log Out",
+        path: "sign-out",
+        lineAbove: true,
+      },
+  ];
+
+  const signedOutNavigation: NavigationItem[] = [
+    {
+      icon: (className) => <HelpCircle className={className} />,
+      name: "Help",
+      path: "/Blog/Help",
+      lineAbove: true,
+    },
+    {
+        icon: (className) => <MessagePlusSquare className={className} />,
+        name: "Feedback",
+        path: `mailto:vidchill@vidchill.com`,
+        lineAbove: false,
+      },
+      {
+        icon: (className) => <File className={className} />,
+        name: "Terms of Service",
+        path: "/Blog/TOS",
+        lineAbove: true,
+      },
+      {
+        icon: (className) => <Lock className={className} />,
+        name: "Privacy",
+        path: "/Blog/Privacy",
+        lineAbove: false,
+      },
+  ];
+
+  const Navigation = sessionData ? signedInNavigation : signedOutNavigation;
 
   const [searchInput, setSearchInput] = useState("");
 
@@ -46,6 +127,10 @@ export default function Navbar({ children }: NavbarProps) {
       void handleSearch();
     }
   };
+
+  function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(" ");
+  }
 
   return (
     <>
@@ -69,7 +154,7 @@ export default function Navbar({ children }: NavbarProps) {
                   <input
                     id="search"
                     name="search"
-                    className="focus:ring-primary-500 block w-full rounded-md border-0 py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-500 sm:text-sm sm:leading-6"
                     placeholder="Search"
                     type="search"
                     onChange={(e: ChangeEvent<HTMLInputElement>) => {
@@ -124,6 +209,33 @@ export default function Navbar({ children }: NavbarProps) {
                       Menu
                     </p>
                   )}
+                  {Navigation.map((item) => (
+                    <Menu.Item key={item.name}>
+                      {({ active }) => (
+                        <Link
+                          onClick={(e) => {
+                            e.preventDefault();
+                            if (item.path === "sign-out") {
+                              void signOut();
+                            } else {
+                              void router.push(item.path || "/");
+                            }
+                          }}
+                          href={item.path || "/"}
+                          className={classNames(
+                            active ? "bg-gray-100 " : "",
+                            "block px-4 py-2 text-sm text-gray-700",
+                            item.lineAbove ? "border-t border-gray-200" : "",
+                          )}
+                        >
+                          <div className="flex items-center ">
+                            {item.icon("h-4 w-4 stroke-gray-700")}
+                            <div className="pl-2">{item.name}</div>
+                          </div>
+                        </Link>
+                      )}
+                    </Menu.Item>
+                  ))}
                 </Menu.Items>
               </Transition>
             </Menu>
