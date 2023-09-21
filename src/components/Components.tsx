@@ -5,6 +5,7 @@ export { default as Footer } from "./Footer";
 export { default as Thumbnail } from "./Thumbnail";
 export { default as Description } from "./Description"
 export { default as CommentSection } from "./CommentSection"
+export { default as ProfileHeader } from "./ProfileHeader"
 export { ErrorMessage } from "./ErrorMessage";
 export { LoadingMessage } from "./ErrorMessage";
 export { UserImage, MultiColumnVideo, SingleColumnVideo, SmallSingleColumnVideo, UserName, VideoTitle, VideoInfo } from "./VideoComponent"
