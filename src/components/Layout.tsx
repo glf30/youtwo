@@ -18,7 +18,7 @@ export default function Layout({ children, closeSidebar }: LayoutProps) {
       <Navbar>
         <button
           type="button"
-          className="-mx-2 inline-flex items-center  justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500"
+          className="-mx-2 inline-flex items-center  justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-violet-500"
           onClick={() => setSidebarOpen(true)}
         >
           <Menu className="h-6 w-6 stroke-gray-400" aria-hidden="true" />

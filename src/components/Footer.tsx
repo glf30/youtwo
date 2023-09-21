@@ -53,7 +53,7 @@ export default function Footer() {
             key={tab.name}
             href="#"
             className={classNames(
-              tab.current ? " text-purple-600" : "text-gray-600",
+              tab.current ? " text-violet-600" : "text-gray-600",
               "group relative min-w-0 flex-1 overflow-hidden px-4 py-4 text-center text-xs font-medium  hover:bg-gray-50 focus:z-10",
             )}
             onClick={(e) => {
@@ -67,7 +67,7 @@ export default function Footer() {
           >
             <div className="flex flex-col items-center ">
               {tab.current
-                ? tab.icon("h-4 w-4 shrink-0 stroke-purple-600 ")
+                ? tab.icon("h-4 w-4 shrink-0 stroke-violet-600 ")
                 : tab.icon("h-4 w-4 shrink-0  stroke-gray-600")}
               <span>{tab.name}</span>
             </div>

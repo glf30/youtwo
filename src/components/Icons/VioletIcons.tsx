@@ -53,7 +53,7 @@ export function VioletHorn(props: React.SVGProps<SVGSVGElement>) {
         width="56"
         height="56"
         rx="28"
-        stroke="#F0FDF9"
+        stroke="#ddd6fe"
         stroke-width="10"
       />
     </svg>
@@ -84,7 +84,7 @@ export function VioletPeople(props: React.SVGProps<SVGSVGElement>) {
         width="56"
         height="56"
         rx="28"
-        stroke="#F0FDF9"
+        stroke="#ddd6fe"
         stroke-width="10"
       />
     </svg>
@@ -113,7 +113,7 @@ export function VioletUserCheck(props: React.SVGProps<SVGSVGElement>) {
         width="48"
         height="48"
         rx="24"
-        stroke="#F0FDF9"
+        stroke="#ddd6fe"
         stroke-width="8"
       />
     </svg>
@@ -145,7 +145,7 @@ export function VioletHeart(props: React.SVGProps<SVGSVGElement>) {
         width="48"
         height="48"
         rx="24"
-        stroke="#F0FDF9"
+        stroke="#ddd6fe"
         stroke-width="8"
       />
     </svg>
@@ -181,7 +181,7 @@ export function VioletEye(props: React.SVGProps<SVGSVGElement>) {
         width="48"
         height="48"
         rx="24"
-        stroke="#F0FDF9"
+        stroke="#ddd6fe"
         stroke-width="8"
       />
     </svg>

@@ -71,15 +71,15 @@ export default function LikeDislikeButton({
         className={`focus group relative -ml-px inline-flex items-center rounded-r-md  px-2 py-2 ring-1 ring-inset ring-gray-300 focus:z-10
         ${
           userChoice.dislike
-            ? "group bg-error-600 text-white hover:text-gray-900 group-hover:stroke-gray-900"
-            : "group bg-white text-gray-600 hover:text-error-600 group-hover:stroke-error-600"
+            ? "group bg-red-600 text-white hover:text-gray-900 group-hover:stroke-gray-900"
+            : "group bg-white text-gray-600 hover:text-red-600 group-hover:stroke-red-600"
         }`}
       >
         <ThumbsDown
           className={`group h-4 w-4 shrink-0 ${
             userChoice.dislike
               ? "group fill-white group-hover:stroke-gray-900"
-              : "group stroke-gray-600 group-hover:stroke-error-600"
+              : "group stroke-gray-600 group-hover:stroke-red-600"
           }`}
         />
         <p className="pl-2">{dislikeCount}</p>

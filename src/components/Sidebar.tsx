@@ -180,15 +180,15 @@ export default function Sidebar({
                         }}
                         className={classNames(
                           item.current
-                            ? " bg-gray-50 text-purple-600"
-                            : " text-gray-700 hover:bg-gray-50 hover:text-purple-600",
+                            ? " bg-gray-50 text-violet-600"
+                            : " text-gray-700 hover:bg-gray-50 hover:text-violet-600",
                           "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6",
                         )}
                       >
                         {item.current
-                          ? item.icon("h-5 w-5 shrink-0 stroke-purple-600 ")
+                          ? item.icon("h-5 w-5 shrink-0 stroke-violet-600 ")
                           : item.icon(
-                              "h-5 w-5 shrink-0  stroke-gray-500  group-hover:stroke-purple-600",
+                              "h-5 w-5 shrink-0  stroke-gray-500  group-hover:stroke-violet-600",
                             )}
                         <p className={classNames(closeSidebar ? "hidden" : "")}>
                           {item.name}
@@ -210,11 +210,11 @@ export default function Sidebar({
                         : void signIn();
                     }
                   }}
-                  className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-purple-600"
+                  className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-violet-600"
                 >
                   <Settings
                     className={
-                      "h-5 w-5 shrink-0 stroke-gray-500 group-hover:stroke-purple-600"
+                      "h-5 w-5 shrink-0 stroke-gray-500 group-hover:stroke-violet-600"
                     }
                   />
                   <p className={classNames(closeSidebar ? "hidden" : "")}>
@@ -223,11 +223,11 @@ export default function Sidebar({
                 </Link>
                 <Link
                   href="/Blog/Help"
-                  className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-purple-600"
+                  className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-violet-600"
                 >
                   <HelpCircle
                     className={
-                      "h-5 w-5 shrink-0 stroke-gray-500 group-hover:stroke-purple-600"
+                      "h-5 w-5 shrink-0 stroke-gray-500 group-hover:stroke-violet-600"
                     }
                   />
                   <p className={classNames(closeSidebar ? "hidden" : "")}>
@@ -302,17 +302,17 @@ export default function Sidebar({
                                 }}
                                 className={classNames(
                                   item.current
-                                    ? " bg-gray-50 text-purple-600"
-                                    : " text-gray-700 hover:bg-gray-50 hover:text-purple-600",
+                                    ? " bg-gray-50 text-violet-600"
+                                    : " text-gray-700 hover:bg-gray-50 hover:text-violet-600",
                                   "group flex gap-x-3 rounded-md px-2 py-1.5 text-sm font-semibold leading-6",
                                 )}
                               >
                                 {item.current
                                   ? item.icon(
-                                      "h-5 w-5 shrink-0 stroke-purple-600",
+                                      "h-5 w-5 shrink-0 stroke-violet-600",
                                     )
                                   : item.icon(
-                                      "h-5 w-5 shrink-0  stroke-gray-500  group-hover:stroke-purple-600",
+                                      "h-5 w-5 shrink-0  stroke-gray-500  group-hover:stroke-violet-600",
                                     )}
                                 {item.name}
                               </Link>
@@ -324,22 +324,22 @@ export default function Sidebar({
                       <li className="mt-auto border-b ">
                         <Link
                           href="/Blog/Privacy"
-                          className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-purple-600"
+                          className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-violet-600"
                         >
                           <Lock
                             className={
-                              "h-5 w-5 shrink-0 stroke-gray-500 group-hover:stroke-purple-600"
+                              "h-5 w-5 shrink-0 stroke-gray-500 group-hover:stroke-violet-600"
                             }
                           />
                           Privacy
                         </Link>
                         <Link
                           href="/Blog/TOS"
-                          className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-purple-600"
+                          className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-violet-600"
                         >
                           <File
                             className={
-                              "h-5 w-5 shrink-0 stroke-gray-500 group-hover:stroke-purple-600"
+                              "h-5 w-5 shrink-0 stroke-gray-500 group-hover:stroke-violet-600"
                             }
                           />
                           Terms of Service

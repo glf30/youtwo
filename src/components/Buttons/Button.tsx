@@ -32,7 +32,7 @@ const Button: FC<ButtonProps> = ({
   };
   const variantClasses = {
     primary:
-      "bg-purple-600 text-white focus:ring-4 hover:bg-purple-700 transition duration-300 ease-in-out shadow-sm focus:ring-purple-100 focus-visible:outline-4 focus-visible:outline-purple-100 focus-visible:outline-offset-4",
+      "bg-violet-600 text-white focus:ring-4 hover:bg-violet-700 transition duration-300 ease-in-out shadow-sm focus:ring-violet-100 focus-visible:outline-4 focus-visible:outline-violet-100 focus-visible:outline-offset-4",
     "secondary-gray":
       "bg-white text-gray-700 focus:ring-4 shadow-sm ring-1 ring-inset focus:ring-gray-100 focus-visible:outline-4 focus-visible:outline-gray-100 focus-visible:outline-offset-4 ring-gray-300 hover:text-gray-800 hover:bg-gray-50 transition duration-300 ease-in-out",
     "tertiary-gray":

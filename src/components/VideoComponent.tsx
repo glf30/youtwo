@@ -36,7 +36,7 @@ export const MultiColumnVideo: React.FC<VideoComponentProps> = ({
           key={video.id}
         >
           <div className="relative w-full">
-            <Thumbnail thumbnailUrl={video.thumbnailUrl} />
+            <Thumbnail thumbnailUrl={video.thumbnailUrl || "/assets/background.jpg"} />
             <div className=" max-w-xl ">
               <div className="items-top relative mt-4 flex gap-x-4 ">
                 <UserImage image={user.image || ""} />
@@ -68,7 +68,7 @@ export const SingleColumnVideo: React.FC<VideoComponentProps> = ({
         <Link href={`/video/${video.id}`} key={video.id}>
           <div className="my-5 flex flex-col gap-4 hover:bg-gray-100 lg:flex-row">
             <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:w-64 lg:shrink-0">
-              <Thumbnail thumbnailUrl={video.thumbnailUrl} />
+              <Thumbnail thumbnailUrl={video.thumbnailUrl || "/assets/background.jpg"} />
             </div>
             <div>
               <VideoTitle title={video.title} />
@@ -101,7 +101,7 @@ export const SmallSingleColumnVideo: React.FC<VideoComponentProps> = ({
         <Link href={`/video/${video.id}`} key={video.id} onClick={refetch}>
           <div className=" relative isolate my-4 flex flex-col gap-4 rounded-2xl border hover:bg-gray-100 lg:flex-row ">
             <div className=" aspect-[16/9] sm:aspect-[2/1] lg:w-52  lg:shrink-0">
-              <Thumbnail thumbnailUrl={video.thumbnailUrl} />
+              <Thumbnail thumbnailUrl={video.thumbnailUrl || "/assets/background.jpg"}/>
             </div>
             <div className="mt-2 flex w-full flex-col items-start overflow-hidden text-xs  max-lg:mx-2">
               <VideoTitle

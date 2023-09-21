@@ -12,6 +12,25 @@ type Context = {
   db: PrismaClient;
 };
 
+const checkVideoOwnership = async (
+  ctx: Context,
+  id: string,
+  userId: string
+) => {
+  const video = await ctx.db.video.findUnique({
+    where: {
+      id: id,
+    },
+  });
+  if (!video || video.userId !== userId) {
+    throw new TRPCError({
+      code: "INTERNAL_SERVER_ERROR",
+      message: "Video not found",
+    });
+  }
+  return video;
+};
+
 export const videoRouter = createTRPCRouter({
   getVideoById: publicProcedure
     .input(
@@ -272,5 +291,72 @@ export const videoRouter = createTRPCRouter({
       );
 
       return { videos: videosWithCounts, users: users };
+    }),
+    publishVideo: protectedProcedure
+    .input(z.object({ id: z.string(), userId: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      const video = await checkVideoOwnership(ctx, input.id, input.userId);
+      const publishVideo = await ctx.db.video.update({
+        where: {
+          id: video.id,
+        },
+
+        data: {
+          publish: !video.publish,
+        },
+      });
+
+      return publishVideo;
+    }),
+
+  deleteVideo: protectedProcedure
+    .input(z.object({ id: z.string(), userId: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      const video = await checkVideoOwnership(ctx, input.id, input.userId);
+      const deletedVideo = await ctx.db.video.delete({
+        where: {
+          id: video.id,
+        },
+      });
+
+      return deletedVideo;
+    }),
+
+  updateVideo: protectedProcedure
+    .input(
+      z.object({
+        id: z.string(),
+        userId: z.string(),
+        title: z.string().optional(),
+        description: z.string().optional(),
+        thumbnailUrl: z.string().optional(),
+      })
+    )
+
+    .mutation(async ({ ctx, input }) => {
+      const video = await checkVideoOwnership(ctx, input.id, input.userId);
+      const updatedVideo = await ctx.db.video.update({
+        where: {
+          id: video.id,
+        },
+        data: {
+          title: input.title ?? video.title,
+          description: input.description ?? video.description,
+          thumbnailUrl: input.thumbnailUrl ?? video.thumbnailUrl,
+        },
+      });
+      return updatedVideo;
+    }),
+  createVideo: protectedProcedure
+    .input(z.object({ userId: z.string(), videoUrl: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      const video = await ctx.db.video.create({
+        data: {
+          userId: input.userId,
+          videoUrl: input.videoUrl,
+          publish: false,
+        },
+      });
+      return video;
     }),
 });

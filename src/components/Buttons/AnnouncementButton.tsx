@@ -74,16 +74,16 @@ export default function AnnouncementButton({
 
         ${
           userChoice.dislike
-            ? "group text-error-600 hover:text-gray-900 group-hover:stroke-gray-900 "
-            : "group bg-white text-gray-600  hover:text-error-600 group-hover:stroke-error-600"
+            ? "group text-red-600 hover:text-gray-900 group-hover:stroke-gray-900 "
+            : "group bg-white text-gray-600  hover:text-red-600 group-hover:stroke-red-600"
         }`}
         >
           <ThumbsDown
             className={`group h-5 w-5 shrink-0
             ${
               userChoice.dislike
-                ? "group fill-error-600 stroke-error-600 group-hover:stroke-gray-900"
-                : "group stroke-gray-600 group-hover:stroke-error-600"
+                ? "group fill-red-600 stroke-red-600 group-hover:stroke-gray-900"
+                : "group stroke-gray-600 group-hover:stroke-red-600"
             }
             }
               `}
