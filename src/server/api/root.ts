@@ -4,6 +4,7 @@ import { videoEngagementRouter } from "./routers/videoEngagement";
 import { userRouter } from "./routers/user"
 import { commentRouter } from "./routers/comment";
 import { playlistRouter } from "./routers/playlist";
+import { announcementRouter } from "./routers/announcement";
 
 /**
  * This is the primary router for your server.
@@ -11,6 +12,7 @@ import { playlistRouter } from "./routers/playlist";
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
+  announcement: announcementRouter,
   comment: commentRouter,
   playlist: playlistRouter,
   user: userRouter,
