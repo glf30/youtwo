@@ -9,3 +9,4 @@ export { default as ProfileHeader } from "./ProfileHeader"
 export { ErrorMessage } from "./ErrorMessage";
 export { LoadingMessage } from "./ErrorMessage";
 export { UserImage, MultiColumnVideo, SingleColumnVideo, SmallSingleColumnVideo, UserName, VideoTitle, VideoInfo } from "./VideoComponent"
+export { MultiColumnPlaylist } from "./PlaylistComponent"

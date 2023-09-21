@@ -88,7 +88,7 @@ export default function ProfileHeader() {
         <>
           <Image
             className="h-32 w-full object-cover lg:h-64"
-            src={channel.backgroundImage || "/background.jpg"}
+            src={channel.backgroundImage || "/assets/background.jpg"}
             width={2000}
             height={2000}
             alt="error"
