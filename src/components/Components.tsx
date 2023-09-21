@@ -5,4 +5,4 @@ export { default as Footer } from "./Footer";
 export { default as Thumbnail } from "./Thumbnail";
 export { ErrorMessage } from "./ErrorMessage";
 export { LoadingMessage } from "./ErrorMessage";
-export { UserImage, MultiColumnVideo, SingleColumnVideo } from "./VideoComponent"
+export { UserImage, MultiColumnVideo, SingleColumnVideo, SmallSingleColumnVideo, UserName, VideoTitle, VideoInfo } from "./VideoComponent"

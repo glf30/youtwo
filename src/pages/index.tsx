@@ -60,25 +60,25 @@ const Home: NextPage = () => {
 
 export default Home;
 
-function AuthShowcase() {
-  const { data: sessionData } = useSession();
+// function AuthShowcase() {
+//   const { data: sessionData } = useSession();
 
-  // const { data: secretMessage } = api.video.getSecretMessage.useQuery(
-  //   undefined, // no input
-  //   { enabled: sessionData?.user !== undefined }
-  // );
+//   // const { data: secretMessage } = api.video.getSecretMessage.useQuery(
+//   //   undefined, // no input
+//   //   { enabled: sessionData?.user !== undefined }
+//   // );
 
-  return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      {/* <p className="text-center text-2xl text-white">
-        {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
-        {secretMessage && <span> - {secretMessage}</span>}
-      </p>
-      <Button variant="primary" size="md"
-        onClick={sessionData ? () => void signOut() : () => void signIn()}
-      >
-        {sessionData ? "Sign out" : "Sign in"}
-      </Button> */}
-    </div>
-  );
-}
+//   return (
+//     <div className="flex flex-col items-center justify-center gap-4">
+//       {/* <p className="text-center text-2xl text-white">
+//         {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
+//         {secretMessage && <span> - {secretMessage}</span>}
+//       </p>
+//       <Button variant="primary" size="md"
+//         onClick={sessionData ? () => void signOut() : () => void signIn()}
+//       >
+//         {sessionData ? "Sign out" : "Sign in"}
+//       </Button> */}
+//     </div>
+//   );
+// }
