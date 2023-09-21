@@ -8,12 +8,10 @@ import { type NextPage } from "next";
 import {
   FollowButton,
   LikeDislikeButton,
-//   SaveButton,
+  SaveButton,
 } from "~/components/Buttons/Buttons";
 import {
-//   Description,
   SmallSingleColumnVideo,
-//   CommentSection,
   Layout,
   ErrorMessage,
   LoadingMessage,
@@ -142,6 +140,7 @@ const VideoPage: NextPage = () => {
                             hasLiked: viewer.hasLiked,
                           }}
                         />
+                        <SaveButton videoId={video.id} />
                       </div>
                     </div>
 
