@@ -17,7 +17,8 @@ const config = {
     "@typescript-eslint/consistent-type-definitions": "off",
 
     "@typescript-eslint/consistent-type-imports": "off",
-    "@typescript-eslint/no-unused-vars": "off"
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/prefer-nullish-coalescing": "off"
   },
 };
 
