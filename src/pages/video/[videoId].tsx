@@ -21,6 +21,8 @@ import {
   VideoInfo,
   UserImage,
   UserName,
+  Description,
+  CommentSection,
 } from "~/components/Components";
 import { useSession } from "next-auth/react";
 import Head from "next/head";
@@ -140,7 +142,6 @@ const VideoPage: NextPage = () => {
                             hasLiked: viewer.hasLiked,
                           }}
                         />
-
                       </div>
                     </div>
 
@@ -167,11 +168,31 @@ const VideoPage: NextPage = () => {
                         }}
                       />
                     </div>
-
+                    <Description
+                      text={video.description || ""}
+                      length={200}
+                      border={true}
+                    />
                   </div>
                 </div>
 
-
+                <CommentSection
+                  videoId={video.id}
+                  comments={videoData.comments.map(({ user, comment }) => ({
+                    comment: {
+                      id: comment.id,
+                      message: comment.message,
+                      createdAt: comment.createdAt,
+                    },
+                    user: {
+                      id: user.id,
+                      name: user.name,
+                      image: user.image,
+                      handle: user.handle,
+                    },
+                  }))}
+                  refetch={refetchVideoData}
+                />
               </div>
             </>
           )}
