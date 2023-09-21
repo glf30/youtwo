@@ -7,6 +7,7 @@ import { Button } from "./Buttons";
 import { api } from "~/utils/api";
 import { useSession } from "next-auth/react";
 import { env } from "~/env.mjs";
+import Image from "next/image";
 
 interface EditButtonProps {
   video: {
@@ -173,7 +174,7 @@ export function EditButton({ video, refetch }: EditButtonProps) {
                             <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                               <div className="text-center">
                                 {croppedImage ? (
-                                  <img src={croppedImage} alt="Cropped" />
+                                  <Image src={croppedImage} alt="Cropped" />
                                 ) : (
                                   <>
                                     <div className="mt-4 flex text-sm leading-6 text-gray-600">

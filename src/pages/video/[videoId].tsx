@@ -66,13 +66,13 @@ const VideoPage: NextPage = () => {
         userId: sessionData ? sessionData.user.id : " ",
       });
     }
-  }, [videoId]);
+  }, [videoId, addView, refetchVideoData,sessionData]);
 
   useEffect(() => {
     if (!sidebarVideos) {
       void refetchSidebarVideos();
     }
-  }, []);
+  }, [refetchSidebarVideos, sidebarVideos]);
 
   const video = videoData?.video;
   const user = videoData?.user;
