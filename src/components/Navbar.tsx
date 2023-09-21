@@ -33,7 +33,7 @@ export default function Navbar({ children }: NavbarProps) {
     {
       icon: (className) => <User className={className} />,
       name: "View Profile",
-      path: `/${String(userId)}/ProfileVideos}`,
+      path: `/${String(userId)}/ProfileVideos`,
       lineAbove: true,
     },
     {

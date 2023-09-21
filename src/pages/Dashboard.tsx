@@ -65,7 +65,7 @@ const Dashboard: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Creator Studio - VidChill</title>
+        <title>Creator Studio - YouTwo</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout closeSidebar={true}>
@@ -153,8 +153,8 @@ const Dashboard: NextPage = () => {
                             <tr key={video.id}>
                               <PublishButton video={video} />
                               <td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0">
-                                <div className="flex">
-                                  <div className="h-16 w-16 flex-shrink-0">
+                                <div className="flex items-center">
+                                  <div className="flex h-16 w-16 flex-shrink-0 items-center">
                                     <Thumbnail
                                       thumbnailUrl={video.thumbnailUrl || "/assets/background.jpg"}
                                     />
