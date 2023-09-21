@@ -62,7 +62,7 @@ export default function ProfileHeader() {
     } else if (errorTypes) {
       return (
         <ErrorMessage
-          icon="GreenPeople"
+          icon="VioletPeople"
           message="Error loading Channel"
           description="Sorry there is a error loading channel at this time."
         />

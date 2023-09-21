@@ -18,7 +18,7 @@ const Playlist: NextPage = () => {
     } else if (error || !data) {
       return (
         <ErrorMessage
-          icon="GreenPlay"
+          icon="VioletPlay"
           message="No Playlists are avaliable"
           description="Go create some playlists."
         />
